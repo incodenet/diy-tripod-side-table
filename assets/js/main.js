@@ -308,7 +308,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
-  document.querySelectorAll(".header-nav-item").forEach((link) => {
+  document.querySelectorAll(".scroll-nav").forEach((link) => {
     link.addEventListener("click", (event) => {
       const target = document.getElementById(link.hash.slice(1));
 
