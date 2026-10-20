@@ -6,70 +6,98 @@ const initPhases = async () => {
   const phases = [
     {
       id: 1,
-      title: "",
-      phase: "Surface the slab",
-      info: [],
-      warn: null,
+      title: "Slab Surfacing & Preparation",
+      phase: "Slab Surfacing & Live Edge Prep",
+      info: [
+        {
+          title: "Moisture Verification",
+          description:
+            "Measure with a pin-type moisture meter. Must be <12% (ideally 8–10% for indoor furniture) to prevent post-build warping or cracking.",
+        },
+        {
+          title: "Flattening",
+          description:
+            'Set up parallel guide rails and a router flattening sled with a 1.5"–2" surfacing bit. Surface side A, flip, and plane side B parallel until a uniform thickness (1.5"–2") is achieved.',
+        },
+        {
+          title: "Bark/Edge Treatment",
+          description:
+            "Remove loose cambium and dead bark with a drawknife or wire wheel. Sand edge with 150-grit paper to preserve the organic live edge contour.",
+        },
+      ],
       image: "assets/img/router-flattening-sled.svg",
     },
 
     {
       id: 2,
-      title: "Precision tapered leg cuts",
-      phase: "Taper the legs",
+      title: "Cutting the Tapered Legs",
+      phase: "Precision Leg Tapering & Compound Bevels",
       info: [
         {
-          title: "Rough-cut three blanks",
-          description:
-            "Crosscut flat 1 × 4″ boards to 20–22″, leaving extra length for trimming.",
+          title: "Rough Dimensioning",
+          description: 'Crosscut 3 flat boards to rough length (20"–22").',
         },
         {
-          title: "Mark the taper",
+          title: "Taper Cutting",
           description:
-            "3.5″ wide at the hip, 1.5″ at the foot. Tapering one edge over 22″ is about 5.2°; tapering both edges equally is about 2.6° per side.",
+            'Mark top width (3"–3.5") and bottom width (1.5"). Lock into a tapering jig and pass through a table saw or cut along a clamped track-saw rail.',
         },
         {
-          title: "Cut on a jig",
+          title: "Dual Bevels",
           description:
-            "Lock each blank in a tapering jig against the rip fence, or use a clamped track-saw rail. Cut all three the same way.",
-        },
-        {
-          title: "Cut the dual 12° bevels",
-          description:
-            "Set the miter saw to 12°. Cut the tops, mark identical lengths (18.5″ for a 20″ table) and cut the feet parallel to the tops.",
+            'Set miter saw to 12°. Cut the top of all 3 legs. Measure exact identical lengths (18.5") and cut the bottom feet parallel to the top cuts.',
         },
       ],
-      warn: {
-        title: "Why parallel bevels",
-        description:
-          "Cutting the foot parallel to the top keeps the foot flat on the floor once the leg is splayed 12°.",
-      },
       image: "assets/img/taper-jig.svg",
     },
     {
       id: 3,
-      title: "",
-      phase: "Lay out 120°",
-      info: [],
-      warn: null,
+      title: "Structural Joinery (No End-Grain Glue!)",
+      phase: "The 120° Tripod Geometric Layout",
+      info: [
+        {
+          description: 'Mill 3 hardwood mounting cleats (1.5" × 2" × 6")',
+        },
+        {
+          description:
+            "Bevel one long edge of each cleat to 12° on the table saw.",
+        },
+        {
+          description:
+            'Fasten legs to the beveled edge of the cleats using three #8 × 2" countersunk wood screws + wood glue (long-grain to long-grain joint).',
+        },
+        {
+          description:
+            'Fasten cleats to the underside of the slab using 5/16" brass threaded inserts and machine bolts, passing through <b>slotted holes</b> in the cleats to permit cross-grain seasonal wood movement.',
+        },
+      ],
       image: "assets/img/phase3.svg",
     },
     {
       id: 4,
-      title: "",
-      phase: "Join & assemble",
-      info: [],
-      warn: null,
+      title: "Sanding & Finishing",
+      phase: "Joinery & Mechanical Assembly",
+      info: [
+        {
+          title: "Progressive Sanding",
+          description:
+            "Random orbital sander with vacuum extraction: 80 grit → 120 grit → 180 grit. Water pop with fine mist to raise grain, final sand with 220 grit.",
+        },
+        {
+          title: "Balanced Finishing",
+          description:
+            "Apply Hardwax Oil (e.g., Rubio Monocoat or Osmo Polyx) or wipe-on polyurethane. <b>Crucial:</b> Apply identical coat counts to both the top surface and the underside to equalize moisture exchange and stop cupping.",
+        },
+      ],
       image: "assets/img/phase4.svg",
     },
-    {
-      id: 5,
-      title: "",
-      phase: "Sand & finish",
-      info: [],
-      warn: null,
-      image: "assets/img/taper-jig.svg",
-    },
+    // {
+    //   id: 5,
+    //   title: "Progressive sanding & finishing",
+    //   phase: "Progressive Sanding & Balanced Finishing",
+    //   info: [],
+    //   image: "assets/img/taper-jig.svg",
+    // },
   ];
 
   const phaseList = wrapper.querySelector(".phases");
@@ -78,9 +106,6 @@ const initPhases = async () => {
   const slideName = wrapper.querySelector(".phase-slide-name");
   const slideTitle = wrapper.querySelector(".phase-slide-title");
   const info = wrapper.querySelector(".phase-info");
-  const warn = wrapper.querySelector(".warn");
-  const warnTitle = warn.querySelector(".warn-title");
-  const warnDesc = warn.querySelector(".warn-desc");
   const previousButton = wrapper.querySelector(
     ".phase-slide-buttons .btn-secondary",
   );
@@ -119,9 +144,9 @@ const initPhases = async () => {
     });
 
     slideImage.src = phase.image;
-    slideCaption.textContent = `FIG. ${activePhase + 1} ${phase.phase}`;
+    slideCaption.textContent = `Figure · ${activePhase + 1} ${phase.phase}`;
     slideName.textContent = `PHASE ${activePhase + 1} OF ${phases.length}`;
-    slideTitle.textContent = phase.title;
+    slideTitle.textContent = `Phase ${activePhase + 1}: ${phase.title}`;
 
     info.innerHTML = phase.info
       .map(
@@ -129,23 +154,19 @@ const initPhases = async () => {
           <li>
             <div class="phase-info-number">${index + 1}</div>
             <div>
-              <div class="phase-info-title">${item.title}</div>
+              ${item.title ? '<div class="phase-info-title">' + item.title + "</div>" : ""}
               <div class="phase-info-desc">${item.description}</div>
             </div>
           </li>`,
       )
       .join("");
 
-    warn.style.display = phase.warn ? "" : "none";
-    warnTitle.textContent = phase.warn?.title ?? "";
-    warnDesc.textContent = phase.warn?.description ?? "";
-
     previousButton.disabled = activePhase === 0;
     nextButton.disabled = !nextPhase;
     previousButton.textContent =
       activePhase > 0 ? `← Phase ${activePhase}` : "← Previous phase";
     nextButton.textContent = nextPhase
-      ? `Phase ${activePhase + 2}: ${nextPhase.phase} →`
+      ? `Next: Phase ${activePhase + 2} →`
       : "Next phase →";
   };
 
@@ -171,10 +192,42 @@ const calculateLeg = ({ height, splay, thickness }) => {
   const radians = (splay * Math.PI) / 180;
 
   return {
+    rise,
     length: rise / Math.cos(radians),
     offset: rise * Math.tan(radians),
     miter: splay,
   };
+};
+
+const ASSEMBLY_SCALE = 6.2;
+
+const drawAssemblyLegs = (svg, { rise, offset }) => {
+  const drop = rise * ASSEMBLY_SCALE;
+  const shift = offset * ASSEMBLY_SCALE;
+
+  const sideTop = 214;
+  const sideBottom = sideTop + drop;
+  const centerTop = 224;
+  const centerBottom = sideBottom + 8;
+
+  const sideLeg = (hip, foot) =>
+    `M${hip - 17} ${sideTop}H${hip + 17}` +
+    `L${(foot + 9).toFixed(2)} ${sideBottom.toFixed(2)}` +
+    `H${(foot - 9).toFixed(2)}Z`;
+
+  svg
+    .querySelector('[data-leg="left"]')
+    .setAttribute("d", sideLeg(197, 197 - shift));
+  svg
+    .querySelector('[data-leg="right"]')
+    .setAttribute("d", sideLeg(363, 363 + shift));
+
+  svg
+    .querySelector('[data-leg="center"]')
+    .setAttribute(
+      "d",
+      `M266 ${centerTop}H294L290 ${centerBottom.toFixed(2)}H270Z`,
+    );
 };
 
 const initCalculator = () => {
@@ -189,9 +242,10 @@ const initCalculator = () => {
   const lengthValue = results.querySelector('[data-result="length"]');
   const offsetValue = results.querySelector('[data-result="offset"]');
   const miterValue = results.querySelector('[data-result="miter"]');
+  const assembly = document.querySelector(".calc-assembly-image svg");
 
   const onCalcUpdate = () => {
-    const { length, offset, miter } = calculateLeg({
+    const { rise, length, offset, miter } = calculateLeg({
       height: Number(heightInput.value),
       splay: Number(splayInput.value),
       thickness: Number(thicknessInput.value),
@@ -200,11 +254,38 @@ const initCalculator = () => {
     lengthValue.textContent = `${length.toFixed(2)}″`;
     offsetValue.textContent = `+${offset.toFixed(2)}″`;
     miterValue.textContent = `${miter.toFixed(1)}°`;
+
+    if (assembly) drawAssemblyLegs(assembly, { rise, offset });
   };
 
   form.addEventListener("input", onCalcUpdate);
 
   onCalcUpdate();
+};
+
+const initAssemblyView = () => {
+  const assembly = document.querySelector(".calc-assembly-image svg");
+  const buttons = document.querySelectorAll(
+    ".calc-assembly-togglers [data-view]",
+  );
+
+  if (!assembly || !buttons.length) return;
+
+  buttons.forEach((button) => {
+    button.addEventListener("click", () => {
+      buttons.forEach((item) => {
+        const isActive = item === button;
+
+        item.classList.toggle("btn-primary", isActive);
+        item.classList.toggle("btn-secondary", !isActive);
+      });
+
+      assembly.classList.toggle(
+        "is-profile",
+        button.dataset.view === "profile",
+      );
+    });
+  });
 };
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -268,4 +349,5 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   initCalculator();
+  initAssemblyView();
 });

@@ -273,6 +273,24 @@
   padding: 11px 39px;
 }
 
+.calc-assembly-image [data-part] {
+  transition:
+    transform 0.4s ease,
+    opacity 0.3s ease;
+}
+
+.calc-assembly-image .is-profile [data-part="bolts"] {
+  opacity: 0;
+}
+
+.calc-assembly-image .is-profile [data-part="cleats"] {
+  transform: translateY(-46px);
+}
+
+.calc-assembly-image .is-profile [data-part="legs"] {
+  transform: translateY(-72px);
+}
+
 .calc-assembly-caption {
   font-weight: 500;
   font-size: 12px;
