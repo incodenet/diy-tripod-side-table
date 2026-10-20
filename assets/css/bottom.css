@@ -1,5 +1,142 @@
 @import url("components/checkbox.css");
 
+.phases {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 12px;
+  margin-bottom: 24px;
+}
+
+.phase-item {
+  border-radius: 12px;
+  border: 1px solid var(--color-neutral-border);
+  padding: 8px 12px;
+}
+
+.phase-item.active {
+  background-color: white;
+  border: 2px solid var(--color-brand-primary);
+}
+
+.phase-item-inner {
+  gap: 10px;
+}
+
+.phase-item-number {
+  width: 16px;
+  min-height: 28px;
+  line-height: 28px;
+  border-radius: 14px;
+  flex: 0 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 16px;
+}
+
+.phase-item-title {
+  font-weight: 700;
+  font-size: 12px;
+  line-height: 16px;
+  letter-spacing: 12%;
+  text-transform: uppercase;
+  color: var(--color-brand-primary);
+}
+
+.phase-item-desc {
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 20px;
+  color: var(--color-text-primary);
+}
+
+.phase-item.disabled .phase-item-title,
+.phase-item.disabled .phase-item-desc {
+  color: var(--color-text-muted);
+}
+
+.phase-item.disabled .phase-item-number {
+  background-color: var(--color-neutral-subtle);
+  color: var(--color-text-muted);
+}
+
+.phase-item.passed .phase-item-number {
+  background-color: var(--color-success);
+  color: white;
+}
+
+.phase-item.active .phase-item-number {
+  background-color: var(--color-brand-primary);
+  color: white;
+}
+
+.phase-slide-left {
+  max-width: 49%;
+  flex: 0 0 49%;
+}
+
+.phase-slide {
+  border: 1px solid var(--color-neutral-border);
+  background-color: white;
+  border-radius: 16px;
+  padding: 24px;
+}
+
+.phase-slide-image {
+  background-color: var(--color-neutral-subtle);
+  border-radius: 12px;
+  padding: 40px;
+  text-align: center;
+  margin-bottom: 12px;
+}
+
+.phase-slide-caption {
+  text-transform: uppercase;
+  font-weight: 700;
+  font-size: 11px;
+  line-height: 14px;
+  letter-spacing: 6%;
+  color: var(--color-text-muted);
+}
+
+.phase-slide-right {
+  display: flex;
+  flex-direction: column;
+  flex: 1 1 auto;
+  padding-left: 32px;
+}
+
+.phase-slide-name {
+  font-weight: 700;
+  font-size: 12px;
+  line-height: 16px;
+  letter-spacing: 12%;
+  color: var(--color-brand-primary);
+  margin-bottom: 20px;
+}
+
+.phase-slide-title {
+  font-family: var(--font-fraunces);
+  font-weight: 600;
+  font-size: 40px;
+  line-height: 48px;
+  letter-spacing: -2%;
+
+  color: var(--color-text-primary);
+  margin-bottom: 20px;
+}
+
+.phase-info {
+  margin-bottom: 20px;
+}
+
+.phase-slide .warn {
+  margin-bottom: 20px;
+}
+
 .check-table {
   background-color: white;
   border-radius: 16px;
@@ -45,6 +182,13 @@
 footer {
   background-color: white;
   min-height: 80px;
+}
+
+.footer-text {
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 16px;
+  color: var(--color-text-muted);
 }
 
 footer .container {
