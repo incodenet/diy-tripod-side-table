@@ -166,6 +166,47 @@ const initPhases = async () => {
   initPhase();
 };
 
+const calculateLeg = ({ height, splay, thickness }) => {
+  const rise = height - thickness;
+  const radians = (splay * Math.PI) / 180;
+
+  return {
+    length: rise / Math.cos(radians),
+    offset: rise * Math.tan(radians),
+    miter: splay,
+  };
+};
+
+const initCalculator = () => {
+  const form = document.querySelector(".calc-form");
+  const results = document.querySelector(".calc-results");
+
+  if (!form || !results) return;
+
+  const heightInput = form.querySelector("#height");
+  const splayInput = form.querySelector("#splay");
+  const thicknessInput = form.querySelector("#thickness");
+  const lengthValue = results.querySelector('[data-result="length"]');
+  const offsetValue = results.querySelector('[data-result="offset"]');
+  const miterValue = results.querySelector('[data-result="miter"]');
+
+  const onCalcUpdate = () => {
+    const { length, offset, miter } = calculateLeg({
+      height: Number(heightInput.value),
+      splay: Number(splayInput.value),
+      thickness: Number(thicknessInput.value),
+    });
+
+    lengthValue.textContent = `${length.toFixed(2)}″`;
+    offsetValue.textContent = `+${offset.toFixed(2)}″`;
+    miterValue.textContent = `${miter.toFixed(1)}°`;
+  };
+
+  form.addEventListener("input", onCalcUpdate);
+
+  onCalcUpdate();
+};
+
 document.addEventListener("DOMContentLoaded", () => {
   document.querySelector(".burger-menu").addEventListener("click", function () {
     if (document.querySelector(".header-nav").classList.contains("active")) {
@@ -225,4 +266,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
     onRangeUpdate();
   });
+
+  initCalculator();
 });
