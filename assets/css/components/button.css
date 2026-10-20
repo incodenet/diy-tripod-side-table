@@ -3,11 +3,17 @@
   gap: 4px;
   font-weight: 600;
   font-size: 14px;
+  transition: all 0.2s ease;
+}
+
+.btn:not(.btn-rounded) {
   border-radius: 10px;
+}
+
+.btn:not(.btn-md) {
   padding: 0 18px;
   height: 44px;
   line-height: 44px;
-  transition: all 0.2s ease;
 }
 
 .btn:disabled,
@@ -38,4 +44,14 @@
 
 .btn-secondary:hover {
   background-color: var(--color-neutral-subtle);
+}
+
+.btn-md {
+  height: 40px;
+  line-height: 40px;
+  padding: 0 16px;
+}
+
+.btn-rounded {
+  border-radius: 20px;
 }

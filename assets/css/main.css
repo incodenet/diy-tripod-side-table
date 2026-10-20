@@ -242,4 +242,8 @@
   .section-divider:before {
     display: none;
   }
+
+  .geometry-grid-top {
+    grid-template-columns: 1fr;
+  }
 }

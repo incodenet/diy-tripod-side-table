@@ -44,7 +44,7 @@ document.addEventListener("DOMContentLoaded", () => {
   if (phaseItems.length && phaseButtons) {
     const previousButton = phaseButtons.querySelector(".btn-secondary");
     const nextButton = phaseButtons.querySelector(".btn-primary");
-    
+
     let activePhase = Array.from(phaseItems).findIndex((item) =>
       item.classList.contains("active"),
     );
@@ -55,8 +55,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const getPhaseTitle = (item) =>
       item.querySelector(".phase-item-title").textContent.trim();
-    const getButtonTitle = (title) =>
-      title.replace(/^PHASE\s+/i, "Phase ");
+    const getButtonTitle = (title) => title.replace(/^PHASE\s+/i, "Phase ");
 
     const updatePhases = () => {
       phaseItems.forEach((item, index) => {
@@ -108,4 +107,24 @@ document.addEventListener("DOMContentLoaded", () => {
 
     updatePhases();
   }
+
+  document.querySelectorAll(".range-slider").forEach((slider) => {
+    const input = slider.querySelector('input[type="range"]');
+    const output = slider.querySelector("output > .value");
+
+    const onRangeUpdate = () => {
+      const { min, max, value } = input;
+
+      const progress =
+        ((Number(value) - Number(min)) / (Number(max) - Number(min))) * 100;
+
+      input.style.setProperty("--progress", `${progress}%`);
+
+      output.textContent = `${value}`;
+    };
+
+    input.addEventListener("input", onRangeUpdate);
+
+    onRangeUpdate();
+  });
 });

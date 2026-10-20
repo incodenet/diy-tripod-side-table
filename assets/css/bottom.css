@@ -1,3 +1,4 @@
+@import url("components/range-slider.css");
 @import url("components/checkbox.css");
 
 .phases {
@@ -213,6 +214,77 @@
   border: 0;
 }
 
+.calc-wrapper {
+  gap: 24px;
+}
+
+.calc-container {
+  background-color: white;
+  border: 1px solid var(--color-neutral-border);
+  border-radius: 16px;
+  padding: 28px;
+}
+
+.calc-left {
+  display: grid;
+  align-content: baseline;
+  gap: 28px;
+  flex: 0 0 40%;
+}
+
+.calc-results {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  align-items: baseline;
+}
+
+.calc-formula {
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 16px;
+  color: var(--color-text-muted);
+}
+
+.calc-right {
+  flex: 1;
+}
+
+.calc-assembly-top {
+  margin-bottom: 16px;
+}
+
+.calc-assembly-title {
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 28px;
+  letter-spacing: -0.5%;
+  color: var(--color-text-primary);
+}
+
+.calc-assembly-togglers {
+  gap: 6px;
+}
+
+.calc-assembly-image {
+  background-color: var(--color-neutral-subtle);
+  border-radius: 12px;
+  margin-bottom: 16px;
+  padding: 11px 39px;
+}
+
+.calc-assembly-caption {
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 16px;
+  color: var(--color-text-muted);
+}
+
+.calc-form {
+  display: grid;
+  gap: 28px;
+}
+
 footer {
   background-color: white;
   min-height: 80px;
@@ -241,5 +313,61 @@ footer .container {
 
   .check-table-body-item:not(:first-child) {
     display: none;
+  }
+
+  .tab {
+    white-space: nowrap;
+  }
+
+  .tools-grid,
+  .geometry-grid-bottom {
+    grid-template-columns: repeat(1, 1fr);
+  }
+
+  .phase-slide,
+  .calc-wrapper {
+    flex-wrap: wrap;
+  }
+
+  .phase-item {
+    height: 6px;
+    border-radius: 6px;
+    border: 0;
+    background-color: var(--color-neutral-border);
+    padding: 0;
+  }
+
+  .phase-slide-right {
+    padding-left: 0;
+  }
+
+  .phase-item.passed {
+    background-color: var(--color-success);
+  }
+
+  .phase-item.active {
+    background-color: var(--color-brand-primary);
+  }
+
+  .phase-item-inner {
+    display: none;
+  }
+
+  .calc-left {
+    flex: 0 1 auto;
+  }
+
+  .calc-results {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .phase-slide-left {
+    flex: 0 0 100%;
+    max-width: 100%;
+  }
+
+  .check-table-row {
+    grid-template-columns: 1fr;
   }
 }
