@@ -1,0 +1,245 @@
+.section-divider {
+  position: relative;
+  padding: 72px 0;
+}
+
+.section-divider:not(.single):before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 20px;
+  right: 20px;
+  border-top: 1px solid var(--color-neutral-border);
+}
+
+.section-divider.single {
+  padding-bottom: 0;
+}
+
+.section-head {
+  margin-bottom: 24px;
+  max-width: 760px;
+}
+
+.section-head-name {
+  font-weight: 700;
+  font-size: 12px;
+  line-height: 16px;
+  letter-spacing: 12%;
+  margin-bottom: 8px;
+  color: var(--color-brand-primary);
+}
+
+.section-head-title {
+  font-family: var(--font-fraunces);
+  font-weight: 600;
+  font-size: 40px;
+  line-height: 48px;
+  letter-spacing: -2%;
+  margin-bottom: 8px;
+  color: var(--color-text-primary);
+}
+
+.section-head-desc {
+  font-size: 18px;
+  line-height: 28px;
+  color: var(--color-text-secondary);
+  letter-spacing: 0.17px;
+}
+
+.geometry-grid-top {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+  margin-bottom: 24px;
+}
+
+.geometry-card {
+  border-radius: 16px;
+  background-color: white;
+  border: 1px solid var(--color-neutral-border);
+  padding: 20px;
+}
+
+.geometry-card-image {
+  margin-bottom: 12px;
+}
+
+.geometry-card-caption {
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 16px;
+  color: var(--color-text-muted);
+}
+
+.geometry-card-title {
+  font-weight: 600;
+  line-height: 24px;
+  margin-bottom: 10px;
+  color: var(--color-text-primary);
+}
+
+.geometry-card-desc {
+  font-size: 14px;
+  line-height: 20px;
+  color: var(--color-text-secondary);
+}
+
+.geometry-card-tags {
+  margin-bottom: 10px;
+  gap: 6px;
+}
+
+.geometry-grid-bottom {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+}
+
+.warn {
+  border-radius: 12px;
+  border-left: 4px solid;
+  padding: 16px 20px;
+  gap: 12px;
+}
+
+.warn-icon {
+  flex: 0 0 auto;
+  font-weight: 600;
+}
+
+.warn-title {
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 20px;
+  margin-bottom: 4px;
+}
+
+.warn-desc {
+  font-size: 14px;
+  line-height: 20px;
+  color: var(--color-text-secondary);
+}
+
+.warn-primary {
+  background-color: var(--color-alert-warn-bg);
+  border-color: var(--color-alert-warn);
+}
+
+.warn-primary .warn-icon,
+.warn-primary .warn-title {
+  color: var(--color-alert-warn);
+}
+
+.warn-secondary {
+  background-color: var(--color-alert-info-bg);
+  border-color: var(--color-alert-info);
+}
+
+.warn-secondary .warn-icon,
+.warn-secondary .warn-title {
+  color: var(--color-alert-info);
+}
+
+.tabs {
+  display: flex;
+  gap: 8px;
+  overflow: auto;
+  margin-bottom: 24px;
+}
+
+.tab {
+  display: inline-flex;
+  align-items: center;
+  height: 40px;
+  border-radius: 20px;
+  border: 1px solid var(--color-neutral-border);
+  padding: 0 16px;
+  gap: 8px;
+  color: var(--color-text-secondary);
+
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 20px;
+}
+
+.tab-badge {
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 16px;
+  color: var(--color-text-muted);
+}
+
+.tab.active {
+  background-color: var(--color-brand-primary);
+  color: white;
+}
+
+.tab.active .tab-badge {
+  color: white;
+}
+
+.tab-container {
+  margin-bottom: 24px;
+}
+
+.tools-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+}
+
+.tool-item {
+  background-color: white;
+  border: 1px solid var(--color-neutral-border);
+  padding: 16px;
+  border-radius: 14px;
+  display: flex;
+  gap: 14px;
+}
+
+.tool-item-icon {
+  flex: 0 0 auto;
+  width: 16px;
+  height: 40px;
+  line-height: 40px;
+  border-radius: 10px;
+  background-color: var(--color-neutral-subtle);
+  padding: 0 2px;
+  color: #b45309;
+  font-size: 16px;
+}
+
+.tool-item-icon.grey {
+  background-color: var(--color-brand-soft);
+  color: #2f4a3a;
+}
+
+.tool-item-icon.yellow {
+  background-color: var(--color-alert-warn-bg);
+  color: #b45309;
+}
+
+.tool-item-title {
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 20px;
+  color: var(--color-text-primary);
+  margin-bottom: 4px;
+}
+
+.tool-item-desc {
+  font-size: 14px;
+  line-height: 20px;
+  color: var(--color-text-muted);
+}
+
+@media (max-width: 900px) {
+  .section-divider {
+    padding: 20px 0;
+  }
+
+  .section-divider:before {
+    display: none;
+  }
+}

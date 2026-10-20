@@ -1,0 +1,41 @@
+.btn {
+  display: inline-flex;
+  gap: 4px;
+  font-weight: 600;
+  font-size: 14px;
+  border-radius: 10px;
+  padding: 0 18px;
+  height: 44px;
+  line-height: 44px;
+  transition: all 0.2s ease;
+}
+
+.btn:disabled,
+.btn.disabled {
+  opacity: 0.4;
+}
+
+.btn-primary {
+  background-color: var(--color-brand-primary);
+  color: white;
+}
+
+.btn-primary:hover {
+  background-color: var(--color-brand-primary-hover);
+}
+
+.btn:focus {
+  box-shadow:
+    0px 0px 0px 2px #ffffff,
+    0px 0px 0px 4px #2663eb;
+}
+
+.btn-secondary {
+  background-color: white;
+  color: var(--color-brand-primary);
+  border: 1px solid var(--color-neutral-border-strong);
+}
+
+.btn-secondary:hover {
+  background-color: var(--color-neutral-subtle);
+}

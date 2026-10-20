@@ -1,0 +1,67 @@
+@import url("components/checkbox.css");
+
+.check-table {
+  background-color: white;
+  border-radius: 16px;
+  overflow: hidden;
+  margin-bottom: 24px;
+  border: 1px solid var(--color-neutral-border);
+}
+
+.check-table-row {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  border-bottom: 1px solid var(--color-neutral-border);
+}
+
+.check-table-head {
+  background-color: var(--color-neutral-subtle);
+}
+
+.check-table-head-item {
+  font-weight: 700;
+  font-size: 12px;
+  line-height: 16px;
+  letter-spacing: 12%;
+  color: var(--color-text-muted);
+  padding: 13.5px 20px;
+}
+
+.check-table-head-item:first-child {
+  padding-left: 60px;
+}
+
+.check-table-body-item {
+  font-size: 14px;
+  line-height: 20px;
+  color: var(--color-text-secondary);
+  padding: 17.5px 20px;
+}
+
+.check-table-body .check-table-row:last-child {
+  border: 0;
+}
+
+footer {
+  background-color: white;
+  min-height: 80px;
+}
+
+footer .container {
+  gap: 4px;
+}
+
+@media (max-width: 900px) {
+  footer {
+    border-top: 1px solid var(--color-neutral-border);
+    min-height: 85px;
+  }
+
+  .check-table-row {
+    border: 0;
+  }
+
+  .check-table-body-item:not(:first-child) {
+    display: none;
+  }
+}
