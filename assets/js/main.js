@@ -91,13 +91,6 @@ const initPhases = async () => {
       ],
       image: "assets/img/phase4.svg",
     },
-    // {
-    //   id: 5,
-    //   title: "Progressive sanding & finishing",
-    //   phase: "Progressive Sanding & Balanced Finishing",
-    //   info: [],
-    //   image: "assets/img/taper-jig.svg",
-    // },
   ];
 
   const phaseList = wrapper.querySelector(".phases");
