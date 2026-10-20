@@ -35,4 +35,77 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     });
   });
+
+  const phaseItems = document.querySelectorAll(
+    ".phase-wrapper .phases .phase-item",
+  );
+  const phaseButtons = document.querySelector(".phase-slide-buttons");
+
+  if (phaseItems.length && phaseButtons) {
+    const previousButton = phaseButtons.querySelector(".btn-secondary");
+    const nextButton = phaseButtons.querySelector(".btn-primary");
+    
+    let activePhase = Array.from(phaseItems).findIndex((item) =>
+      item.classList.contains("active"),
+    );
+
+    if (activePhase < 0) {
+      activePhase = 0;
+    }
+
+    const getPhaseTitle = (item) =>
+      item.querySelector(".phase-item-title").textContent.trim();
+    const getButtonTitle = (title) =>
+      title.replace(/^PHASE\s+/i, "Phase ");
+
+    const updatePhases = () => {
+      phaseItems.forEach((item, index) => {
+        const number = item.querySelector(".phase-item-number");
+
+        item.classList.toggle("passed", index < activePhase);
+        item.classList.toggle("active", index === activePhase);
+        item.classList.toggle("disabled", index > activePhase);
+        number.textContent = index < activePhase ? "✓" : String(index + 1);
+      });
+
+      previousButton.disabled = activePhase === 0;
+      nextButton.disabled = activePhase === phaseItems.length - 1;
+
+      if (activePhase > 0) {
+        previousButton.textContent = `← ${getButtonTitle(
+          getPhaseTitle(phaseItems[activePhase - 1]),
+        )}`;
+      } else {
+        previousButton.textContent = "← Previous phase";
+      }
+
+      if (activePhase < phaseItems.length - 1) {
+        const nextPhase = phaseItems[activePhase + 1];
+        const nextTitle = getButtonTitle(getPhaseTitle(nextPhase));
+        const nextStep = nextPhase
+          .querySelector(".phase-item-desc")
+          .textContent.trim();
+
+        nextButton.textContent = `${nextTitle}: ${nextStep} →`;
+      } else {
+        nextButton.textContent = "Next phase →";
+      }
+    };
+
+    previousButton.addEventListener("click", () => {
+      if (activePhase > 0) {
+        activePhase -= 1;
+        updatePhases();
+      }
+    });
+
+    nextButton.addEventListener("click", () => {
+      if (activePhase < phaseItems.length - 1) {
+        activePhase += 1;
+        updatePhases();
+      }
+    });
+
+    updatePhases();
+  }
 });
