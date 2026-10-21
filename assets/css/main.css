@@ -21,15 +21,6 @@
   max-width: 760px;
 }
 
-.section-head-name {
-  font-weight: 700;
-  font-size: 12px;
-  line-height: 16px;
-  letter-spacing: 12%;
-  margin-bottom: 8px;
-  color: var(--color-brand-primary);
-}
-
 .section-head-title {
   font-family: var(--font-fraunces);
   font-weight: 600;
