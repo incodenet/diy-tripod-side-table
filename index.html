@@ -80,18 +80,26 @@
             <a href="#geometry" class="header-nav-item font-semibold scroll-nav"
               >Geometry</a
             >
-            <a href="#tools" class="header-nav-item font-semibold scroll-nav">Tools</a>
-            <a href="#build-guide" class="header-nav-item font-semibold scroll-nav"
+            <a href="#tools" class="header-nav-item font-semibold scroll-nav"
+              >Tools</a
+            >
+            <a
+              href="#build-guide"
+              class="header-nav-item font-semibold scroll-nav"
               >Build guide</a
             >
-            <a href="#calculator" class="header-nav-item font-semibold scroll-nav"
+            <a
+              href="#calculator"
+              class="header-nav-item font-semibold scroll-nav"
               >Calculator</a
             >
-            <a href="#checklist" class="header-nav-item font-semibold scroll-nav"
+            <a
+              href="#checklist"
+              class="header-nav-item font-semibold scroll-nav"
               >Checklist</a
             >
           </nav>
-          <a href="#" class="btn btn-secondary">Print plan</a>
+          <a href="#" class="btn btn-secondary print-button">Print plan</a>
         </div>
       </div>
     </header>
@@ -111,8 +119,9 @@
 
             <p class="hero-content-caption-desc">
               A round 1.5–2″ solid-wood slab on three flat, tapered board legs,
-              set 120° apart. Plan the geometry, cut the legs safely, join them
-              without end-grain glue and finish it to last.
+              set 120° apart. Surface the slab, cut the legs safely, lay them
+              out at 120°, join them without end-grain glue and finish it to
+              last.
             </p>
 
             <div class="flex flex-wrap prop-items-wrap">
@@ -139,7 +148,9 @@
             </div>
 
             <div class="flex flex-wrap hero-buttons">
-              <a href="#build-guide" class="btn btn-primary scroll-nav">Start the build →</a>
+              <a href="#build-guide" class="btn btn-primary scroll-nav"
+                >Start the build →</a
+              >
               <a href="#calculator" class="btn btn-secondary scroll-nav"
                 >Open the calculator</a
               >
@@ -183,13 +194,13 @@
             <div class="geometry-card-image">
               <img
                 src="assets/img/side-profile-dual-bevels.svg"
-                alt="Underside"
+                alt="Side profile showing the 12° bevels at both leg ends"
                 class="w-fluid"
               />
             </div>
             <div class="geometry-card-caption">
-              FIG. 1 · UNDERSIDE · 3 legs on 120° radial vectors, cleats 2–3″ in
-              from the edge
+              FIG. 2 · SIDE PROFILE · 12° splay, top and foot bevels cut
+              parallel
             </div>
           </div>
         </div>
@@ -202,7 +213,10 @@
               <div class="chips">MC 8–10%</div>
             </div>
             <div class="geometry-card-desc">
-              Seasoned hardwood (oak, walnut, ash). Moisture under 12%.
+              Seasoned hardwood (oak, walnut, ash). Moisture under 12% to
+              prevent cracking and warping. Flatten both faces coplanar with a
+              router sled or hand plane. Wire-brush off loose bark or remove it
+              from the edge.
             </div>
           </div>
           <div class="geometry-card">
@@ -223,17 +237,20 @@
               <div class="chips">5/16″ inserts</div>
             </div>
             <div class="geometry-card-desc">
-              Machine bolts, washers, glue for long-grain joints only.
+              Machine bolts, washers, #8 × 2″ screws (pilot-drilled and
+              countersunk), glue for long-grain joints only.
             </div>
           </div>
           <div class="geometry-card">
             <div class="geometry-card-title">Finishing</div>
             <div class="geometry-card-tags flex flex-wrap">
-              <div class="chips">80 → 220 grit</div>
+              <div class="chips">80 → 120 → 180 → 220 grit</div>
               <div class="chips">Hardwax oil</div>
+              <div class="chips">Felt pads</div>
             </div>
             <div class="geometry-card-desc">
-              Dust extraction, rags, optional water mist to raise grain.
+              Coat top and underside equally to prevent cupping. Felt pads or
+              leveling feet protect the floor.
             </div>
           </div>
         </div>
@@ -272,7 +289,8 @@
                 <div>
                   <div class="tool-item-title">Table saw + tapering jig</div>
                   <div class="tool-item-desc">
-                    Guided, repeatable tapers with guards on.
+                    Guided, repeatable tapers with guards on; the jig holds the
+                    blank to prevent kickback.
                   </div>
                 </div>
               </div>
@@ -312,7 +330,7 @@
                 <div>
                   <div class="tool-item-title">Random orbital sander</div>
                   <div class="tool-item-desc">
-                    80 → 220 grit with extraction.
+                    80 → 120 → 180 → 220 grit to remove machining marks.
                   </div>
                 </div>
               </div>
@@ -322,7 +340,8 @@
                 <div>
                   <div class="tool-item-title">Drill + countersink</div>
                   <div class="tool-item-desc">
-                    Pilot holes, inserts and clearance.
+                    Pilot holes and countersinks for every screw to prevent
+                    splitting.
                   </div>
                 </div>
               </div>
@@ -390,9 +409,9 @@
             <div class="warn-title">Workshop safety</div>
             <div class="warn-desc">
               Secure stock before every cut, keep hands outside the blade path,
-              use guards and push devices, and never freehand a taper on a table
-              saw. If angled joinery is new to you, ask an experienced
-              woodworker to check your setup.
+              use guards, a riving knife and push devices to prevent kickback,
+              and never freehand a taper on a table saw. If angled joinery is
+              new to you, ask an experienced woodworker to check your setup.
             </div>
           </div>
         </div>
@@ -411,7 +430,7 @@
 
         <div class="phase-wrapper">
           <div class="phases">
-            <div class="phase-item passed">
+            <button type="button" class="phase-item passed">
               <div class="phase-item-indicator hide-desktop"></div>
               <div class="flex align-middle phase-item-inner">
                 <div class="phase-item-number">✓</div>
@@ -420,8 +439,8 @@
                   <div class="phase-item-desc">Surface the slab</div>
                 </div>
               </div>
-            </div>
-            <div class="phase-item active">
+            </button>
+            <button type="button" class="phase-item active">
               <div class="phase-item-indicator hide-desktop"></div>
               <div class="flex align-middle phase-item-inner">
                 <div class="phase-item-number">2</div>
@@ -430,8 +449,9 @@
                   <div class="phase-item-desc">Taper the legs</div>
                 </div>
               </div>
-            </div>
-            <div class="phase-item disabled">
+            </button>
+            <button type="button" class="phase-item active">
+              <div class="phase-i class="phase-item disabled">
               <div class="phase-item-indicator hide-desktop"></div>
               <div class="flex align-middle phase-item-inner">
                 <div class="phase-item-number">3</div>
@@ -440,8 +460,9 @@
                   <div class="phase-item-desc">Lay out 120°</div>
                 </div>
               </div>
-            </div>
-            <div class="phase-item disabled">
+            </button>
+            <button type="button" class="phase-item active">
+              <div class="phase-i class="phase-item disabled">
               <div class="phase-item-indicator hide-desktop"></div>
               <div class="flex align-middle phase-item-inner">
                 <div class="phase-item-number">4</div>
@@ -450,8 +471,9 @@
                   <div class="phase-item-desc">Join & assemble</div>
                 </div>
               </div>
-            </div>
-            <div class="phase-item disabled">
+            </button>
+            <button type="button" class="phase-item active">
+              <div class="phase-i class="phase-item disabled">
               <div class="phase-item-indicator hide-desktop"></div>
               <div class="flex align-middle phase-item-inner">
                 <div class="phase-item-number">5</div>
@@ -460,7 +482,7 @@
                   <div class="phase-item-desc">Sand & finish</div>
                 </div>
               </div>
-            </div>
+            </button>
           </div>
 
           <div class="phase-slides">
@@ -551,6 +573,60 @@
             </div>
           </div>
         </div>
+
+        <ol class="print-phases">
+          <li class="print-phase">
+            <h3 class="print-phase-title">Phase 1: Slab Surfacing &amp; Preparation</h3>
+            <img class="print-phase-image" src="assets/img/router-flattening-sled.svg" alt="Phase 1: Surface the slab" />
+            <ol class="print-phase-info">
+              <li><b>Moisture verification:</b> Measure with a pin-type moisture meter. It must read under 12% (ideally 8–10% for indoor furniture) to prevent cracking, warping or joint failure after the build.</li>
+              <li><b>Flattening:</b> Set up parallel guide rails and a router flattening sled with a surfacing bit. Surface side A in shallow passes, flip, and surface side B parallel to a uniform 1.5–2" thickness.</li>
+              <li><b>Bark &amp; edge treatment:</b> Remove loose cambium and dead bark with a drawknife or wire brush so the edge won't flake over time. Sand the edge with 150 grit to keep its natural contour.</li>
+            </ol>
+            <p class="print-phase-warn"><b>Why both faces:</b> A slab flattened on one face only will rock on its cleats. Both faces must be flat and parallel before layout.</p>
+          </li>
+          <li class="print-phase">
+            <h3 class="print-phase-title">Phase 2: Cutting the Tapered Legs</h3>
+            <img class="print-phase-image" src="assets/img/taper-jig.svg" alt="Phase 2: Taper the legs" />
+            <ol class="print-phase-info">
+              <li><b>Rough dimensioning:</b> Crosscut 3 flat 1 × 4 boards to a rough 20–22", leaving extra length for trimming.</li>
+              <li><b>Taper cutting:</b> Mark 3.5" at the hip and 1.5" at the foot. Lock each blank in a tapering jig against the rip fence (guard and riving knife on, push stick ready) or cut along a clamped track-saw rail. Never freehand a taper: the jig keeps the blank from twisting into the blade and kicking back.</li>
+              <li><b>Dual 12° bevels:</b> Set the miter saw to 12°. Cut the tops of all 3 legs, mark identical centerline lengths (18.66" for a 20" table with a 1.75" slab; use the calculator below for yours) and cut the feet parallel to the tops.</li>
+            </ol>
+            <p class="print-phase-warn"><b>Why parallel bevels:</b> Cutting the foot parallel to the top keeps the foot flat on the floor once the leg is splayed 12°.</p>
+          </li>
+          <li class="print-phase">
+            <h3 class="print-phase-title">Phase 3: The 120° Tripod Layout</h3>
+            <img class="print-phase-image" src="assets/img/phase3.svg" alt="Phase 3: Lay out 120°" />
+            <ol class="print-phase-info">
+              <li><b>Find the center:</b> Mark the center of the slab underside with a compass or two crossing diameters.</li>
+              <li><b>Draw three radial lines:</b> Draw one line from center to edge, then two more at 120° and 240° with a protractor or by stepping the radius around the rim six times and using every other mark.</li>
+              <li><b>Place the cleats:</b> Center a cleat on each line, 2–3" in from the edge, square to the line. Dry-fit the legs and check that all three feet land the same distance from center.</li>
+            </ol>
+            <p class="print-phase-warn"><b>Three-point stability:</b> Three legs at equal 120° spacing always touch the floor, so the table won't rock even on an uneven surface.</p>
+          </li>
+          <li class="print-phase">
+            <h3 class="print-phase-title">Phase 4: Joinery &amp; Assembly (No End-Grain Glue)</h3>
+            <img class="print-phase-image" src="assets/img/cleat-threaded-insert.svg" alt="Phase 4: Join &amp; assemble" />
+            <ol class="print-phase-info">
+              <li><b>Mill the cleats:</b> Mill 3 hardwood mounting cleats (1.5" × 2" × 6") and bevel one long edge of each to 12° on the table saw.</li>
+              <li><b>Pre-drill every hole:</b> Drill a pilot hole and countersink for every screw, and drill insert holes to the size the insert maker specifies, so the hardwood legs, cleats and slab don't split along the grain.</li>
+              <li><b>Attach the legs:</b> Fasten each leg to the beveled edge of its cleat with three #8 × 2" countersunk wood screws plus glue (a long-grain to long-grain joint).</li>
+              <li><b>Mount to the slab:</b> Install 5/16" threaded inserts in the slab underside and bolt each cleat on with 5/16" × 2" machine bolts and washers, passing through <b>slotted holes</b> cut across the grain so the slab can move with the seasons. Snug the bolts but do not overtighten.</li>
+            </ol>
+            <p class="print-phase-warn"><b>Joinery note:</b> Never rely on an end-grain glue joint. The cleat, screws and bolts carry the load; glue only goes on long-grain faces.</p>
+          </li>
+          <li class="print-phase">
+            <h3 class="print-phase-title">Phase 5: Sanding &amp; Finishing</h3>
+            <img class="print-phase-image" src="assets/img/finishing.svg" alt="Phase 5: Sand &amp; finish" />
+            <ol class="print-phase-info">
+              <li><b>Progressive sanding:</b> Random orbital sander with dust extraction: 80 → 120 → 180 grit to remove machining marks. Mist with water to raise the grain, then a final pass at 220.</li>
+              <li><b>Balanced finishing:</b> Apply a hardwax oil (e.g. Rubio Monocoat or Osmo Polyx), Danish oil or wipe-on polyurethane. <b>Crucial:</b> apply the same number of coats to the top and the underside to equalize moisture exchange and stop cupping.</li>
+              <li><b>Protect the floor:</b> Once cured, stick felt floor-protector pads on the feet or fit threaded leveling feet so the legs don't scratch the floor.</li>
+            </ol>
+            <p class="print-phase-warn"><b>Cure before use:</b> Let the finish cure fully (check the label) before loading the table or setting drinks on it.</p>
+          </li>
+        </ol>
       </section>
       <div class="container section-divider"></div>
 
@@ -569,7 +645,9 @@
             <div class="calc-form">
               <div class="range-slider">
                 <div class="range-slider-header">
-                  <label for="height">Target finished height</label>
+                  <label for="height"
+                    >Target height (match your sofa arm)</label
+                  >
                   <output for="height"
                     ><span class="value">20.00</span>″</output
                   >
@@ -615,7 +693,9 @@
               <div class="range-slider">
                 <div class="range-slider-header">
                   <label for="thickness">Slab thickness</label>
-                  <output for="thickness"><span class="value">1.75</span>″</output>
+                  <output for="thickness"
+                    ><span class="value">1.75</span>″</output
+                  >
                 </div>
 
                 <input
@@ -623,9 +703,9 @@
                   type="range"
                   min="1.5"
                   max="2"
-                  step="0.1"
+                  step="0.05"
                   value="1.75"
-                  style="--progress: 40%"
+                  style="--progress: 50%"
                 />
 
                 <div class="range-slider-limits">
@@ -692,12 +772,14 @@
                 xmlns="http://www.w3.org/2000/svg"
               >
                 <path
+                  data-part="slab"
                   d="M280 114C379.411 114 460 94.3005 460 70C460 45.6995 379.411 26 280 26C180.589 26 100 45.6995 100 70C100 94.3005 180.589 114 280 114Z"
                   fill="#E2C195"
                   stroke-width="2"
                   stroke="#78350F"
                 />
                 <path
+                  data-part="slab"
                   opacity="0.55"
                   d="M100 70V88C100 99.6695 118.964 110.861 152.721 119.113C186.477 127.364 232.261 132 280 132C327.739 132 373.523 127.364 407.279 119.113C441.036 110.861 460 99.6695 460 88V70"
                   fill="#B45309"
@@ -772,6 +854,7 @@
                   stroke="#78350F"
                 />
                 <rect
+                  data-part="slab"
                   x="466"
                   y="62"
                   width="37"
@@ -780,6 +863,7 @@
                   fill="white"
                 />
                 <path
+                  data-part="slab"
                   d="M473.322 75.11C472.772 75.11 472.295 75.0183 471.892 74.835C471.489 74.6517 471.177 74.3913 470.957 74.054C470.744 73.7093 470.634 73.306 470.627 72.844H472.002C472.002 73.174 472.119 73.4343 472.354 73.625C472.596 73.8083 472.922 73.9 473.333 73.9C473.729 73.9 474.037 73.8083 474.257 73.625C474.484 73.4417 474.598 73.1887 474.598 72.866C474.598 72.5947 474.517 72.36 474.356 72.162C474.202 71.9567 473.978 71.8173 473.685 71.744L472.761 71.491C472.13 71.3297 471.643 71.04 471.298 70.622C470.961 70.204 470.792 69.698 470.792 69.104C470.792 68.6493 470.895 68.2533 471.1 67.916C471.305 67.5787 471.595 67.3183 471.969 67.135C472.35 66.9517 472.798 66.86 473.311 66.86C474.088 66.86 474.704 67.0617 475.159 67.465C475.614 67.861 475.845 68.3963 475.852 69.071H474.477C474.477 68.7557 474.374 68.51 474.169 68.334C473.964 68.1507 473.674 68.059 473.3 68.059C472.941 68.059 472.662 68.1433 472.464 68.312C472.266 68.4807 472.167 68.719 472.167 69.027C472.167 69.3057 472.24 69.544 472.387 69.742C472.541 69.9327 472.761 70.0683 473.047 70.149L474.004 70.413C474.642 70.5743 475.13 70.864 475.467 71.282C475.804 71.6927 475.973 72.2023 475.973 72.811C475.973 73.2657 475.863 73.669 475.643 74.021C475.423 74.3657 475.115 74.6333 474.719 74.824C474.323 75.0147 473.857 75.11 473.322 75.11ZM478.389 75V66.97H479.764V73.724H483.174V75H478.389ZM484.896 75L486.92 66.97H488.691L490.726 75H489.318L488.878 73.053H486.744L486.304 75H484.896ZM486.997 71.931H488.625L488.141 69.775C488.061 69.4157 487.991 69.093 487.932 68.807C487.874 68.5137 487.833 68.301 487.811 68.169C487.789 68.301 487.749 68.5137 487.69 68.807C487.639 69.093 487.569 69.412 487.481 69.764L486.997 71.931ZM492.614 75V66.97H495.078C495.855 66.97 496.471 67.157 496.926 67.531C497.381 67.8977 497.608 68.4 497.608 69.038C497.608 69.3973 497.527 69.709 497.366 69.973C497.205 70.237 496.985 70.4423 496.706 70.589C496.435 70.7357 496.119 70.809 495.76 70.809V70.765C496.149 70.7577 496.493 70.831 496.794 70.985C497.102 71.1317 497.344 71.3517 497.52 71.645C497.703 71.9383 497.795 72.294 497.795 72.712C497.795 73.174 497.689 73.5773 497.476 73.922C497.263 74.2667 496.963 74.5343 496.574 74.725C496.193 74.9083 495.734 75 495.199 75H492.614ZM493.956 73.856H495.111C495.514 73.856 495.83 73.7497 496.057 73.537C496.292 73.317 496.409 73.02 496.409 72.646C496.409 72.272 496.292 71.9713 496.057 71.744C495.83 71.5093 495.514 71.392 495.111 71.392H493.956V73.856ZM493.956 70.281H495.056C495.423 70.281 495.709 70.1857 495.914 69.995C496.127 69.797 496.233 69.5293 496.233 69.192C496.233 68.8547 496.127 68.5907 495.914 68.4C495.709 68.2093 495.423 68.114 495.056 68.114H493.956V70.281Z"
                   fill="#78350F"
                 />
@@ -830,7 +914,8 @@
 
             <div class="calc-assembly-caption hide-mobile">
               Conceptual schematic, not a fabrication drawing. Legs redraw as
-              splay changes.
+              height, splay and slab thickness change: at the same finished
+              height, a thicker slab means shorter legs.
             </div>
           </div>
         </div>
@@ -944,6 +1029,21 @@
               </div>
               <div class="check-table-body-item">Check cure time</div>
             </div>
+            <div class="check-table-row">
+              <div class="check-table-body-item">
+                <label class="checkbox-container"
+                  >Floor protection
+                  <input type="checkbox" />
+                  <span class="checkmark"></span>
+                </label>
+              </div>
+              <div class="check-table-body-item">
+                Felt pads or leveling feet on all three feet
+              </div>
+              <div class="check-table-body-item">
+                Slide on the floor, no scratching
+              </div>
+            </div>
           </div>
         </div>
 
@@ -952,9 +1052,10 @@
           <div>
             <div class="warn-title">Joinery note</div>
             <div class="warn-desc">
-              Never rely on end-grain glue. The #8 × 2″ screws are illustrative
-              only: check grain direction, edge distance, pilot holes and load
-              before you commit.
+              Never rely on end-grain glue. Pre-drill a pilot hole and
+              countersink for every #8 × 2″ screw so the hardwood does not
+              split, and check grain direction, edge distance and load before
+              you commit.
             </div>
           </div>
         </div>
@@ -972,6 +1073,7 @@
     </footer>
 
     <link rel="stylesheet" href="assets/css/bottom.css" />
+    <link rel="stylesheet" href="assets/css/print.css" />
     <script src="assets/js/main.js"></script>
   </body>
 </html>

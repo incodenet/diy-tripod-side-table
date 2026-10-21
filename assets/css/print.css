@@ -1,0 +1,37 @@
+@media print {
+  header,
+  .hero-buttons,
+  .tabs,
+  .phase-wrapper,
+  .calc-form,
+  .calc-assembly-togglers {
+    display: none !important;
+  }
+
+  .section-divider:before {
+    display: none;
+  }
+
+  .section-divider {
+    padding: 10px 0;
+  }
+
+  .tool-item {
+    display: flex !important;
+  }
+
+  .print-phases {
+    display: block;
+    padding-left: 20px;
+  }
+
+  .print-phases > li {
+    break-inside: avoid;
+    margin-bottom: 16px;
+  }
+
+  .print-phases ol {
+    padding-left: 20px;
+    list-style: decimal;
+  }
+}

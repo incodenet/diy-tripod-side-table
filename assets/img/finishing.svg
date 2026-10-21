@@ -1,0 +1,36 @@
+<svg width="561" height="380" viewBox="0 0 561 380" fill="none" xmlns="http://www.w3.org/2000/svg" font-family="JetBrains Mono, ui-monospace, monospace" font-size="10" font-weight="700" letter-spacing="0.4">
+  <!-- grit strip -->
+  <g>
+    <rect x="96" y="22" width="80" height="22" rx="4" fill="#E7DCC6"/><text x="136" y="37" text-anchor="middle" fill="#78350F">80</text>
+    <rect x="186" y="22" width="80" height="22" rx="4" fill="#EDE4D3"/><text x="226" y="37" text-anchor="middle" fill="#78350F">120</text>
+    <rect x="276" y="22" width="80" height="22" rx="4" fill="#F3EDE1"/><text x="316" y="37" text-anchor="middle" fill="#78350F">180</text>
+    <rect x="366" y="22" width="80" height="22" rx="4" fill="#FFFFFF" stroke="#CFCABD"/><text x="406" y="37" text-anchor="middle" fill="#78350F">220</text>
+    <text x="96" y="60" fill="#57534E" font-weight="500">GRIT SEQUENCE · water-pop before 220</text>
+  </g>
+  <!-- coats on top -->
+  <g stroke="#2563EB" stroke-width="1.5">
+    <path d="M160 74V92M156 88L160 94L164 88"/><path d="M280 74V92M276 88L280 94L284 88"/><path d="M400 74V92M396 88L400 94L404 88"/>
+  </g>
+  <rect x="420" y="72" width="118" height="18" rx="4" fill="white"/><text x="426" y="85" fill="#2563EB">COATS · TOP</text>
+  <!-- slab -->
+  <path d="M80 92H480C486.6 92 492 97.4 492 104V134C492 140.6 486.6 146 480 146H80C73.4 146 68 140.6 68 134V104C68 97.4 73.4 92 80 92Z" fill="#E2C195" stroke="#78350F" stroke-width="2"/>
+  <path d="M74 98H486" stroke="#2563EB" stroke-width="2" stroke-dasharray="4 3"/>
+  <path d="M74 141H486" stroke="#2563EB" stroke-width="2" stroke-dasharray="4 3"/>
+  <!-- coats underside -->
+  <g stroke="#2563EB" stroke-width="1.5">
+    <path d="M160 168V150M156 154L160 148L164 154"/><path d="M340 168V150M336 154L340 148L344 154"/>
+  </g>
+  <rect x="372" y="152" width="172" height="18" rx="4" fill="white"/><text x="378" y="165" fill="#2563EB">SAME COATS · UNDERSIDE</text>
+  <!-- legs -->
+  <path d="M206 146H250L214 318H192L206 146Z" fill="#B45309" stroke="#78350F" stroke-width="2"/>
+  <path d="M310 146H354L368 318H346L310 146Z" fill="#B45309" stroke="#78350F" stroke-width="2"/>
+  <!-- felt pads -->
+  <rect x="190" y="318" width="26" height="6" rx="2" fill="#57534E"/>
+  <rect x="344" y="318" width="26" height="6" rx="2" fill="#57534E"/>
+  <path d="M60 324H500" stroke="#78716C" stroke-dasharray="6 4"/>
+  <rect x="120" y="336" width="86" height="18" rx="4" fill="white"/><text x="126" y="349" fill="#57534E">FELT PADS</text>
+  <rect x="300" y="336" width="190" height="18" rx="4" fill="white"/><text x="306" y="349" fill="#57534E">or threaded leveling feet</text>
+  <rect x="96" y="190" width="94" height="18" rx="4" fill="white"/><text x="102" y="203" fill="#78350F">EQUAL COATS</text>
+  <rect x="380" y="214" width="150" height="18" rx="4" fill="white"/><text x="386" y="227" fill="#78350F">balances moisture,</text>
+  <rect x="380" y="234" width="150" height="18" rx="4" fill="white"/><text x="386" y="247" fill="#78350F">stops cupping</text>
+</svg>
