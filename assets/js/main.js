@@ -148,8 +148,6 @@ const initPhases = async () => {
 
   const phaseList = wrapper.querySelector(".phases");
   const slideImage = wrapper.querySelector(".phase-slide-image img");
-  const slideCaption = wrapper.querySelector(".phase-slide-caption");
-  const slideName = wrapper.querySelector(".phase-slide-name");
   const slideTitle = wrapper.querySelector(".phase-slide-title");
   const info = wrapper.querySelector(".phase-info");
   const previousButton = wrapper.querySelector(
@@ -192,9 +190,7 @@ const initPhases = async () => {
     });
 
     slideImage.src = phase.image;
-    slideCaption.textContent = `FIG. ${activePhase + 3} · PHASE ${activePhase + 1} · ${phase.phase.toUpperCase()}`;
     slideImage.alt = `Phase ${activePhase + 1}: ${phase.phase}`;
-    slideName.textContent = `PHASE ${activePhase + 1} OF ${phases.length}`;
     slideTitle.textContent = `Phase ${activePhase + 1}: ${phase.title}`;
 
     if (noteTitle && phase.note) noteTitle.textContent = phase.note.title;
