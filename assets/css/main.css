@@ -189,26 +189,23 @@
   gap: 14px;
 }
 
-.tool-item-icon {
+.tool-item-bar {
   flex: 0 0 auto;
-  width: 16px;
+  width: 8px;
   height: 40px;
   line-height: 40px;
   border-radius: 10px;
-  background-color: var(--color-neutral-subtle);
+  background-color: var(--color-wood-base);
   padding: 0 2px;
-  color: #b45309;
   font-size: 16px;
 }
 
-.tool-item-icon.grey {
-  background-color: var(--color-brand-soft);
-  color: #2f4a3a;
+.tool-item-bar.grey {
+  background-color: var(--color-brand-primary);
 }
 
-.tool-item-icon.yellow {
-  background-color: var(--color-alert-warn-bg);
-  color: #b45309;
+.tool-item-bar.yellow {
+  background-color: #d9a441;
 }
 
 .tool-item-title {
