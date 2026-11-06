@@ -27,10 +27,12 @@ if (outputFiles.length !== 1 || outputFiles[0].name !== "index.html" || !outputF
   fail("dist must contain exactly one file: index.html.");
 }
 
-if (!/<script\b[^>]*>[\s\S]*?\S[\s\S]*?<\/script>/i.test(html)) {
+const scriptBlocks = [...html.matchAll(/<script\b([^>]*)>([\s\S]*?)<\/script>/gi)];
+if (!scriptBlocks.some(([, , content]) => content.trim().length > 0)) {
   fail("No embedded JavaScript was found.");
 }
-if (!/<style\b[^>]*>[\s\S]*?\S[\s\S]*?<\/style>/i.test(html)) {
+const styleBlocks = [...html.matchAll(/<style\b[^>]*>([\s\S]*?)<\/style>/gi)];
+if (!styleBlocks.some(([, content]) => content.trim().length > 0)) {
   fail("No embedded CSS was found.");
 }
 
@@ -52,14 +54,62 @@ for (const tag of runtimeTags) {
   }
 }
 
-for (const match of html.matchAll(/url\(\s*(["']?)(.*?)\1\s*\)/gi)) {
-  const value = match[2].trim();
-  if (value && !/^(?:data:|#|blob:)/i.test(value)) {
-    fail(`Unresolved CSS asset reference remains: ${value}`);
+function cssUrlValues(css) {
+  const values = [];
+  const urlStart = /url\s*\(/gi;
+  let match;
+
+  while ((match = urlStart.exec(css)) !== null) {
+    let index = urlStart.lastIndex;
+    let depth = 1;
+    let quote = null;
+    let escaped = false;
+
+    for (; index < css.length; index += 1) {
+      const character = css[index];
+      if (escaped) {
+        escaped = false;
+        continue;
+      }
+      if (character === "\\") {
+        escaped = true;
+        continue;
+      }
+      if (quote) {
+        if (character === quote) quote = null;
+        continue;
+      }
+      if (character === "'" || character === '"') {
+        quote = character;
+      } else if (character === "(") {
+        depth += 1;
+      } else if (character === ")" && --depth === 0) {
+        values.push(css.slice(urlStart.lastIndex, index).trim().replace(/^(["'])(.*)\1$/, "$2"));
+        urlStart.lastIndex = index + 1;
+        break;
+      }
+    }
+
+    if (depth !== 0) {
+      fail("A CSS url() value is not closed.");
+      break;
+    }
+  }
+
+  return values;
+}
+
+for (const [, css] of styleBlocks) {
+  for (const value of cssUrlValues(css)) {
+    // SVG source inside a data URI can itself contain url(%23clipPathId).
+    // It is part of the embedded image, not a stylesheet dependency.
+    if (value && !/^(?:data:|#|blob:)/i.test(value)) {
+      fail(`Unresolved CSS asset reference remains: ${value}`);
+    }
   }
 }
 
-if (/(?:^|[;\s])@import\b/i.test(html)) fail("An unresolved CSS @import remains.");
+if (styleBlocks.some(([, css]) => /@import\b/i.test(css))) fail("An unresolved CSS @import remains.");
 if (/\b(?:fetch\s*\(|XMLHttpRequest|WebSocket|EventSource|importScripts\s*\(|new\s+Worker\s*\()/i.test(html)) {
   fail("A browser network or external script loading API remains in the artifact.");
 }
