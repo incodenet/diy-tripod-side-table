@@ -1,3 +1,9 @@
+import routerSledImage from "../img/router-flattening-sled.svg";
+import taperJigImage from "../img/taper-jig.svg";
+import phaseThreeImage from "../img/phase3.svg";
+import cleatImage from "../img/cleat-threaded-insert.svg";
+import finishingImage from "../img/finishing.svg";
+
 const initPhases = async () => {
   const wrapper = document.querySelector(".phase-wrapper");
 
@@ -29,7 +35,7 @@ const initPhases = async () => {
         description:
           "A slab flattened on one face only will rock on its cleats. Both faces must be flat and parallel before layout.",
       },
-      image: "assets/img/router-flattening-sled.svg",
+      image: routerSledImage,
     },
     {
       title: "Cutting the Tapered Legs",
@@ -56,7 +62,7 @@ const initPhases = async () => {
         description:
           "Cutting the foot parallel to the top keeps the foot flat on the floor once the leg is splayed 12°.",
       },
-      image: "assets/img/taper-jig.svg",
+      image: taperJigImage,
     },
     {
       title: "The 120° Tripod Layout",
@@ -83,7 +89,7 @@ const initPhases = async () => {
         description:
           "Three legs at equal 120° spacing always touch the floor, so the table won't rock even on an uneven surface.",
       },
-      image: "assets/img/phase3.svg",
+      image: phaseThreeImage,
     },
     {
       title: "Joinery & Assembly (No End-Grain Glue)",
@@ -115,7 +121,7 @@ const initPhases = async () => {
         description:
           "Never rely on an end-grain glue joint. The cleat, screws and bolts carry the load; glue only goes on long-grain faces.",
       },
-      image: "assets/img/cleat-threaded-insert.svg",
+      image: cleatImage,
     },
     {
       title: "Sanding & Finishing",
@@ -142,7 +148,7 @@ const initPhases = async () => {
         description:
           "Let the finish cure fully (check the label) before loading the table or setting drinks on it.",
       },
-      image: "assets/img/finishing.svg",
+      image: finishingImage,
     },
   ];
 

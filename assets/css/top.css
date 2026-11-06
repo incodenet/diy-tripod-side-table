@@ -75,8 +75,8 @@
 
   --font-jet-brains-mono: "JetBrains Mono";
   --font-jet-brains-mono-nl: "JetBrains Mono NL";
-  --font-inter: "Inter";
-  --font-fraunces: "Fraunces";
+  --font-inter: "Inter", Arial, sans-serif;
+  --font-fraunces: "Fraunces", Georgia, serif;
 
   --media-mobile: 767px;
 }
